@@ -75,7 +75,7 @@ class TemporalGraph:
                 graph_df[self._time_col].apply(lambda x: datetime.fromtimestamp(x))  # to datetime format
         else:
             # to datetime
-            graph_df[self._time_col] = graph_df[self._time_col].apply(lambda x: datetime.strptime(x, self._time_format))
+            graph_df[self._time_col] = graph_df[self._time_col].apply(lambda x: datetime.strptime(str(x), self._time_format))
 
 
 if __name__ == "__main__":
